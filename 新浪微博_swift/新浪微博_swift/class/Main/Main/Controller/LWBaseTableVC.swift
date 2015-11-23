@@ -9,7 +9,7 @@
 import UIKit
 
 class LWBaseTableVC: UITableViewController {
- var userLogin = false
+ var userLogin = true
     // 如果用户已经登录 就叫做tableVIew
     override func loadView() {
         userLogin ? super.loadView():setupVistorVidew()
@@ -22,6 +22,6 @@ class LWBaseTableVC: UITableViewController {
         
         //设置view
         view  = UIView()
-        view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = UIColor.brownColor()
     }
 }
