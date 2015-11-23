@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013C97931C02B83B00BA738F /* LWMainTarbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C97921C02B83B00BA738F /* LWMainTarbarController.swift */; };
 		019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A48DC1C01DE9300F1A721 /* AppDelegate.swift */; };
 		019A48E41C01DE9300F1A721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019A48E31C01DE9300F1A721 /* Assets.xcassets */; };
 		01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013C97921C02B83B00BA738F /* LWMainTarbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMainTarbarController.swift; sourceTree = "<group>"; };
 		019A48D91C01DE9300F1A721 /* 新浪微博_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博_swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		019A48DC1C01DE9300F1A721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019A48E31C01DE9300F1A721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		019A48FE1C01E2A900F1A721 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				013C97921C02B83B00BA738F /* LWMainTarbarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				01B654231C029DD300F76BB6 /* LWProfileTabController.swift in Sources */,
 				01B654211C029DB400F76BB6 /* LWMessageTabController.swift in Sources */,
 				01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */,
+				013C97931C02B83B00BA738F /* LWMainTarbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
