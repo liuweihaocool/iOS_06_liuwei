@@ -23,31 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// 设置  tarBarVC 为根控制器
         window?.rootViewController = tabBarVC
         
-//        // 创建homeVC控制器并添加 到tabbar
-//        let homeVC = LWHomeTabController()
-//        homeVC.title = "首页"
-//        homeVC.tabBarItem.image = UIImage(named: "tabbar_home")
-//        tabBarVC.addChildViewController(UINavigationController(rootViewController:homeVC))
-//        
-////        创建messageVC控制器并且添加到tarBarVC上
-//        let messageVC = LWMessageTabController()
-//        messageVC.title = "消息"
-//        messageVC.tabBarItem.image = UIImage(named: "tabbar_message_center")
-//        tabBarVC.addChildViewController(UINavigationController(rootViewController: messageVC))
-//        
-////        创建profileVC控制器并且添加到tarBarVC 上
-//        let profileVC = LWProfileTabController()
-//        profileVC.title = "我"
-//        profileVC.tabBarItem.image = UIImage(named: "tabbar_profile")
-//        tabBarVC.addChildViewController(UINavigationController(rootViewController: profileVC))
-//        
-//        // 创建 discover 控制器并添加到 tarBarVC
-//        let discoverVC = LWDiscoverTabController()
-//        discoverVC.title = "发现"
-//        discoverVC.tabBarItem.image = UIImage(named: "tabbar_discover")
-//        tabBarVC.addChildViewController(UINavigationController(rootViewController: discoverVC))
-        
-        
         window?.makeKeyAndVisible()//设置keywindow和显示
         return true
     }
