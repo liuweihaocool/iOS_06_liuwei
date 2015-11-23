@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A48DC1C01DE9300F1A721 /* AppDelegate.swift */; };
 		019A48E41C01DE9300F1A721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019A48E31C01DE9300F1A721 /* Assets.xcassets */; };
+		01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */; };
+		01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */; };
+		01B654211C029DB400F76BB6 /* LWMessageTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B654201C029DB400F76BB6 /* LWMessageTabController.swift */; };
+		01B654231C029DD300F76BB6 /* LWProfileTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B654221C029DD300F76BB6 /* LWProfileTabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +20,10 @@
 		019A48DC1C01DE9300F1A721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019A48E31C01DE9300F1A721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019A48E81C01DE9300F1A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTabController.swift; sourceTree = "<group>"; };
+		01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWDiscoverTabController.swift; sourceTree = "<group>"; };
+		01B654201C029DB400F76BB6 /* LWMessageTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMessageTabController.swift; sourceTree = "<group>"; };
+		01B654221C029DD300F76BB6 /* LWProfileTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWProfileTabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +69,7 @@
 			children = (
 				019A48F11C01E2A900F1A721 /* Extension(扩展) */,
 				019A48F21C01E2A900F1A721 /* Library(第三方库) */,
-				019A48F31C01E2A900F1A721 /* Main(模块) */,
+				019A48F31C01E2A900F1A721 /* Module(模块) */,
 				019A49091C01E2A900F1A721 /* Model(全局模型) */,
 				019A490A1C01E2A900F1A721 /* Tool(工具类) */,
 			);
@@ -84,7 +92,7 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
-		019A48F31C01E2A900F1A721 /* Main(模块) */ = {
+		019A48F31C01E2A900F1A721 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
 				019A48F41C01E2A900F1A721 /* Compsose */,
@@ -94,7 +102,7 @@
 				019A49011C01E2A900F1A721 /* Message */,
 				019A49051C01E2A900F1A721 /* Profile */,
 			);
-			name = "Main(模块)";
+			name = "Module(模块)";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -118,6 +126,7 @@
 		019A48F61C01E2A900F1A721 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +158,7 @@
 		019A48FA1C01E2A900F1A721 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 		019A49021C01E2A900F1A721 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01B654201C029DB400F76BB6 /* LWMessageTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 		019A49061C01E2A900F1A721 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01B654221C029DD300F76BB6 /* LWProfileTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,7 +357,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */,
 				019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */,
+				01B654231C029DD300F76BB6 /* LWProfileTabController.swift in Sources */,
+				01B654211C029DB400F76BB6 /* LWMessageTabController.swift in Sources */,
+				01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +496,7 @@
 				019A48ED1C01DE9300F1A721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
