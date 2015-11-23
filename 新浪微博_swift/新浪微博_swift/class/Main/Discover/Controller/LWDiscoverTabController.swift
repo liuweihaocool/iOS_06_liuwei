@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LWDiscoverTabController: UITableViewController {
+class LWDiscoverTabController: LWBaseTableVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

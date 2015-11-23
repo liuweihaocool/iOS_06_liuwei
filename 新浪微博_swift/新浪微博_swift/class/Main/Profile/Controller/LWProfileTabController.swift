@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LWProfileTabController: UITableViewController {
+class LWProfileTabController: LWBaseTableVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
