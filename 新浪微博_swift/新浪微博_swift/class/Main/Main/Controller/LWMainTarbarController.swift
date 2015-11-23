@@ -17,9 +17,9 @@ class LWMainTarbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newTabBar = LWTabbar()
-        setValue(newTabBar, forKey: "tabBar")
-        newTabBar.composeButton.addTarget(self, action: "composeClick", forControlEvents: UIControlEvents.TouchUpInside)
+//        let newTabBar = LWTabbar()
+//        setValue(newTabBar, forKey: "tabBar")
+//        newTabBar.composeButton.addTarget(self, action: "composeClick", forControlEvents: UIControlEvents.TouchUpInside)
 
         tabBar.tintColor = UIColor.orangeColor()
         // 创建homeVC控制器并添加 到tabbar
@@ -31,7 +31,7 @@ class LWMainTarbarController: UITabBarController {
         addChildViewController(messageVC, title: "消息", imageName: "tabbar_message_center")
         
         // 占位控制器
-//        addChildViewController(UIViewController())
+        addChildViewController(UIViewController())
         
         //        创建profileVC控制器并且添加到tarBarVC 上
         let profileVC = LWProfileTabController()
@@ -41,9 +41,18 @@ class LWMainTarbarController: UITabBarController {
         let discoverVC = LWDiscoverTabController()
         addChildViewController(discoverVC, title: "发现", imageName: "tabbar_discover")
         
+        
+       
     }
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let width = tabBar.bounds.size.width*0.2
+        
+        let frame = CGRect(x: 2 * width - 5 , y: 0, width: width + 10, height: tabBar.bounds.height)
+        
+        composeButton.frame = frame
+    }
     /**
      创建tarBar的子窗口
      
@@ -74,6 +83,28 @@ class LWMainTarbarController: UITabBarController {
 
   
 
+    /**
+     *  懒加载
+     */
+    lazy var composeButton: UIButton = {
+        let button = UIButton()
+        /**
+        *  设置参数  设置按钮背景图片
+        */
+        button.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
+        // 高亮状态下的图片
+        button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        // 设置按钮图片
+        button.setImage (UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        //
+        button.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        // 添加tabBar里面
+        self.tabBar.addSubview(button)
+        // 添加点击事件
+                    button.addTarget(self, action: "composeClick", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return button
+    }()
 }
 
 

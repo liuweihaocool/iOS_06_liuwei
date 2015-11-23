@@ -99,31 +99,24 @@
 		019A48F31C01E2A900F1A721 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
-				019A48F41C01E2A900F1A721 /* Compsose */,
-				019A48F51C01E2A900F1A721 /* Discover */,
-				019A48F91C01E2A900F1A721 /* Home */,
-				019A48FD1C01E2A900F1A721 /* Main */,
-				019A49011C01E2A900F1A721 /* Message */,
-				019A49051C01E2A900F1A721 /* Profile */,
+				019A48FD1C01E2A900F1A721 /* Main(中间加号按钮) */,
+				019A48F51C01E2A900F1A721 /* Discover(发现) */,
+				019A48F91C01E2A900F1A721 /* Home(主页) */,
+				019A49011C01E2A900F1A721 /* Message(消息) */,
+				019A49051C01E2A900F1A721 /* Profile(我) */,
 			);
 			name = "Module(模块)";
 			path = Main;
 			sourceTree = "<group>";
 		};
-		019A48F41C01E2A900F1A721 /* Compsose */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Compsose;
-			sourceTree = "<group>";
-		};
-		019A48F51C01E2A900F1A721 /* Discover */ = {
+		019A48F51C01E2A900F1A721 /* Discover(发现) */ = {
 			isa = PBXGroup;
 			children = (
 				019A48F61C01E2A900F1A721 /* Controller */,
 				019A48F71C01E2A900F1A721 /* Model */,
 				019A48F81C01E2A900F1A721 /* View */,
 			);
+			name = "Discover(发现)";
 			path = Discover;
 			sourceTree = "<group>";
 		};
@@ -149,13 +142,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		019A48F91C01E2A900F1A721 /* Home */ = {
+		019A48F91C01E2A900F1A721 /* Home(主页) */ = {
 			isa = PBXGroup;
 			children = (
 				019A48FA1C01E2A900F1A721 /* Controller */,
 				019A48FB1C01E2A900F1A721 /* Model */,
 				019A48FC1C01E2A900F1A721 /* View */,
 			);
+			name = "Home(主页)";
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -181,13 +175,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		019A48FD1C01E2A900F1A721 /* Main */ = {
+		019A48FD1C01E2A900F1A721 /* Main(中间加号按钮) */ = {
 			isa = PBXGroup;
 			children = (
 				019A48FE1C01E2A900F1A721 /* Controller */,
 				019A48FF1C01E2A900F1A721 /* Model */,
 				019A49001C01E2A900F1A721 /* View */,
 			);
+			name = "Main(中间加号按钮)";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -214,13 +209,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		019A49011C01E2A900F1A721 /* Message */ = {
+		019A49011C01E2A900F1A721 /* Message(消息) */ = {
 			isa = PBXGroup;
 			children = (
 				019A49021C01E2A900F1A721 /* Controller */,
 				019A49031C01E2A900F1A721 /* Model */,
 				019A49041C01E2A900F1A721 /* View */,
 			);
+			name = "Message(消息)";
 			path = Message;
 			sourceTree = "<group>";
 		};
@@ -246,13 +242,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		019A49051C01E2A900F1A721 /* Profile */ = {
+		019A49051C01E2A900F1A721 /* Profile(我) */ = {
 			isa = PBXGroup;
 			children = (
 				019A49061C01E2A900F1A721 /* Controller */,
 				019A49071C01E2A900F1A721 /* Model */,
 				019A49081C01E2A900F1A721 /* View */,
 			);
+			name = "Profile(我)";
 			path = Profile;
 			sourceTree = "<group>";
 		};
