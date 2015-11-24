@@ -23,10 +23,14 @@ class LWVistorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //准备UI
     override init(frame: CGRect) {
         super.init(frame: frame)
         prepareUI()
     }
+
+//    添加子控件
     private func prepareUI() {
         
         addSubview(iconView)
@@ -35,6 +39,53 @@ class LWVistorView: UIView {
         addSubview(loginBtn)
         addSubview(registerBtn)
         
+        //添加结束 autolayout 注意：要设置约束的view 有父控件 后才能设置他的自动布局约束
+        //关闭autoresizing，不要让他干扰antolayout 的约束  约束需要添加到view上面如果
+        //如果不清楚添加到自身还是父控件，可以直接添加到父控件
+        
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        homeView.translatesAutoresizingMaskIntoConstraints = false
+        loginBtn.translatesAutoresizingMaskIntoConstraints = false
+        registerBtn.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        /*
+            创建约束对象  iconView CenterX与父控件的centerX重合
+        
+        */
+        /**
+        *  <#Description#>
+        *
+        *  @param iconView                  被约束的对象
+        *  @param NSLayoutAttribute.CenterX 被约束对象的 轴
+        *  @param NSLayoutRelation.Equal    被约束对象与约束对象的关系 大于 等于 小于
+        *  @param self                      被约束对象的父控件
+        *  @param NSLayoutAttribute.CenterX 被约束对象的父控件 的 那个 轴
+        *  @param 1                         倍数
+        *  @param 0                         坐标偏移
+        *
+        *  @return <#return value description#>
+        */
+        // 转盘
+        self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+//        小房子
+        self.addConstraint(NSLayoutConstraint(item: homeView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: homeView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+//        文本框
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 40))
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 250))
+//        注册按钮
+        self.addConstraint(NSLayoutConstraint(item: registerBtn, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: registerBtn, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 10))
+        self.addConstraint(NSLayoutConstraint(item: registerBtn, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 90))
+        self.addConstraint(NSLayoutConstraint(item: registerBtn, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 35))
+//        登陆按钮
+        self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 10))
+        self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 90))
+        self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 35))
     }
     
     // 懒加载  小房子

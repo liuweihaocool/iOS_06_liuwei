@@ -9,7 +9,7 @@
 import UIKit
 
 class LWBaseTableVC: UITableViewController {
- var userLogin = true
+ var userLogin = false
     // 如果用户已经登录 就叫做tableVIew
     override func loadView() {
         userLogin ? super.loadView():setupVistorVidew()
@@ -20,8 +20,8 @@ class LWBaseTableVC: UITableViewController {
      */
     private func setupVistorVidew() {
         
-        //设置view
-        view  = UIView()
-        view.backgroundColor = UIColor.brownColor()
+        // 使用自定义的访客视图
+        view  = LWVistorView()
+        view.backgroundColor = UIColor(red: 249 / 255.0, green: 249 / 255.0, blue: 249 / 255.0, alpha: 1)
     }
 }

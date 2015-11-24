@@ -8,7 +8,7 @@
 
 import UIKit
 
-@UIApplicationMain//https://git.oschina.net/czbkiosweibo/GZWeibo666.git git 教师案例fd 
+@UIApplicationMain//https://git.oschina.net/czbkiosweibo/GZWeibo666.git git 教师案例fd
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //    声明变量window
