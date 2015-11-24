@@ -23,6 +23,60 @@ class LWVistorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    // MARK: - 转轮动画  核心动画
+    func rotationAnimation() {
+        // 核心动画 旋转
+        let rotation = CABasicAnimation(keyPath: "transform.rotation")
+        // 设置动画参数
+        rotation.toValue = 2 * M_PI
+        rotation.duration = 20
+        rotation.repeatCount = MAXFLOAT
+        //        当不可见的时候 系统会认为动画完成，在完成的时候不要移除动画
+        rotation.removedOnCompletion = false
+        //  开始核心动画
+        iconView.layer.addAnimation(rotation, forKey: "rotation")
+
+    }
+    
+    // MARK: - 核心动画开始和暂停
+    func pauseAnimation() {
+        // 获取暂停时间
+        let pauseTime = iconView.layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+        // 设置动画速度为1
+        iconView.layer.speed = 0
+        // 
+        iconView.layer.timeOffset = pauseTime
+    }
+    
+    func resumeAnimation() {
+        //获取暂停时间
+        let pauseTime = iconView.layer.timeOffset
+//        设置动画速度为1
+        iconView.layer.speed = 1
+        iconView.layer.timeOffset = 0
+        iconView.layer.beginTime = 0
+        let timeSincePause = iconView.layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pauseTime
+        
+        iconView.layer.beginTime = timeSincePause
+    }
+    
+    
+    
+    // MARK: - 设置访客视图的内容
+    func setupVistorView (imageName: String, message: String) {
+        // 图片 替换转轮的图片
+        iconView.image = UIImage(named: imageName)
+        // 文字
+        messageLabel.text = message
+        // 适应大小
+        messageLabel.sizeToFit()
+        // 隐藏房子
+        homeView.hidden = true
+        
+        converView.hidden = true
+//        self.sendSubviewToBack(converView)
+//        self.bringSubviewToFront(converView)
+    }
     
     //准备UI
     override init(frame: CGRect) {
@@ -34,6 +88,7 @@ class LWVistorView: UIView {
     private func prepareUI() {
         
         addSubview(iconView)
+        addSubview(converView)
         addSubview(homeView)
         addSubview(messageLabel)
         addSubview(loginBtn)
@@ -46,6 +101,7 @@ class LWVistorView: UIView {
         iconView.translatesAutoresizingMaskIntoConstraints = false
         homeView.translatesAutoresizingMaskIntoConstraints = false
         loginBtn.translatesAutoresizingMaskIntoConstraints = false
+        converView.translatesAutoresizingMaskIntoConstraints = false
         registerBtn.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,13 +124,13 @@ class LWVistorView: UIView {
         */
         // 转盘
         self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -80))
 //        小房子
         self.addConstraint(NSLayoutConstraint(item: homeView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: homeView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
 //        文本框
         self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 40))
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 60))
         self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 250))
 //        注册按钮
         self.addConstraint(NSLayoutConstraint(item: registerBtn, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
@@ -86,12 +142,19 @@ class LWVistorView: UIView {
         self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: messageLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 10))
         self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 90))
         self.addConstraint(NSLayoutConstraint(item: loginBtn, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 35))
+        
+        /// 遮罩约束
+        self.addConstraint(NSLayoutConstraint(item: converView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: converView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: converView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: converView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: registerBtn, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 40))
+        
     }
     
     // 懒加载  小房子
-    private lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house" ))
+    private lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon" ))
     // 懒加载  转轮
-    private lazy var homeView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    private lazy var homeView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     // 懒加载  消息label
     private lazy var messageLabel: UILabel = {
         //创建 label
@@ -140,4 +203,7 @@ class LWVistorView: UIView {
         btn.sizeToFit()
         return btn
     }()
+    
+    ///  懒加载  遮罩 图片
+    private lazy var converView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
 }

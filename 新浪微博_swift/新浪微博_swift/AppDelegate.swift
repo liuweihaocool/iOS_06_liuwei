@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)//创建window
+        
+        window?.backgroundColor = UIColor.whiteColor()
         /// 创建  tabBarVC 控制器
         let tabBarVC = LWMainTarbarController()
         /// 设置  tarBarVC 为根控制器
