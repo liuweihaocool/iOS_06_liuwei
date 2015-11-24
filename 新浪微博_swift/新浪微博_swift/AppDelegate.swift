@@ -8,7 +8,7 @@
 
 import UIKit
 
-@UIApplicationMain//https://git.oschina.net/czbkiosweibo/GZWeibo666.git git 教师案例
+@UIApplicationMain//https://git.oschina.net/czbkiosweibo/GZWeibo666.git git 教师案例fd 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //    声明变量window
@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
