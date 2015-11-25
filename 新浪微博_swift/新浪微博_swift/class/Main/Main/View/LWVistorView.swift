@@ -7,6 +7,12 @@
 //
 
 import UIKit
+
+protocol LWVistorViewDelegate: NSObjectProtocol {
+//    登陆按钮点击
+    func vistorViewLoginClick()
+}
+
 /*
     frame: 
         origin:位置（相对父控件）
@@ -17,7 +23,18 @@ import UIKit
 */
 
 // 访客视图
+
+
 class LWVistorView: UIView {
+    
+    
+//    设置代理属性
+    weak var delegate: LWVistorViewDelegate?
+    
+    // MARK: - 登陆按钮点击事件
+    func loginClick() {
+        delegate?.vistorViewLoginClick()
+    }
     
     // swift默认所有的view都能通过 xib 、storyboard 加载
     required init?(coder aDecoder: NSCoder) {
@@ -68,7 +85,7 @@ class LWVistorView: UIView {
         iconView.image = UIImage(named: imageName)
         // 文字
         messageLabel.text = message
-        // 适应大小
+        // 适应大小fffff
         messageLabel.sizeToFit()
         // 隐藏房子
         homeView.hidden = true
@@ -88,6 +105,7 @@ class LWVistorView: UIView {
     private func prepareUI() {
         
         addSubview(iconView)
+        
         addSubview(converView)
         addSubview(homeView)
         addSubview(messageLabel)
@@ -110,7 +128,7 @@ class LWVistorView: UIView {
         
         */
         /**
-        *  <#Description#>
+        *
         *
         *  @param iconView                  被约束的对象
         *  @param NSLayoutAttribute.CenterX 被约束对象的 轴
@@ -120,7 +138,7 @@ class LWVistorView: UIView {
         *  @param 1                         倍数
         *  @param 0                         坐标偏移
         *
-        *  @return <#return value description#>
+        *  @return
         */
         // 转盘
         self.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
@@ -184,6 +202,7 @@ class LWVistorView: UIView {
         btn.titleLabel?.font = UIFont.systemFontOfSize(14)
         //根据内容适应大小
         btn.sizeToFit()
+        btn.addTarget(self, action: "loginClick", forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     

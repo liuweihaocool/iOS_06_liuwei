@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        appsetup()
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)//创建window
         
         window?.backgroundColor = UIColor.whiteColor()
@@ -27,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()//设置keywindow和显示
         return true
+    }
+    
+    func appsetup() {
+        let bar = UINavigationBar.appearance()
+        bar.tintColor = UIColor.orangeColor()
     }
 
     func applicationWillResignActive(application: UIApplication) {

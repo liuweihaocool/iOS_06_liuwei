@@ -22,6 +22,9 @@ class LWBaseTableVC: UITableViewController {
         
         // 使用自定义的访客视图
         view  = vistorView
+        /// 设置按钮的代理
+        vistorView.delegate = self
+        
         view.backgroundColor = UIColor(white: 237 / 255.0, alpha: 1)
         
         print("当前控制器：\(self)")
@@ -40,6 +43,9 @@ class LWBaseTableVC: UITableViewController {
         if self is LWProfileTabController {
             vistorView.setupVistorView("visitordiscover_image_profile", message: "登陆后，你得微博，相册，个人资料会显示在这里，展示给别人")
         }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewRegisterClick")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewLoginClick")
     }
     
     func didEnterBackground() {
@@ -62,3 +68,18 @@ class LWBaseTableVC: UITableViewController {
     // MARK: - 懒加载
     private lazy var vistorView: LWVistorView = LWVistorView()
 }
+
+
+extension LWBaseTableVC:LWVistorViewDelegate {
+    
+    func vistorViewRegisterClick() {
+        print("注册")
+    }
+    // MARK: - 实现登陆按钮的代理方法
+    func vistorViewLoginClick() {
+        print("登陆按钮被点击了")
+    }
+}
+
+
+
