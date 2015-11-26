@@ -72,12 +72,16 @@ class LWBaseTableVC: UITableViewController {
 
 extension LWBaseTableVC:LWVistorViewDelegate {
     
+ 
+    
     func vistorViewRegisterClick() {
         print("注册")
     }
     // MARK: - 实现登陆按钮的代理方法
     func vistorViewLoginClick() {
-        print("登陆按钮被点击了")
+        print("登陆")
+        let oauthVC = LWOauthViewController()
+        presentViewController(UINavigationController(rootViewController: oauthVC), animated: true, completion: nil)
     }
 }
 

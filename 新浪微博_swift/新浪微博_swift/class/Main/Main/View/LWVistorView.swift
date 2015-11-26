@@ -11,6 +11,7 @@ import UIKit
 protocol LWVistorViewDelegate: NSObjectProtocol {
 //    登陆按钮点击
     func vistorViewLoginClick()
+    func vistorViewRegisterClick()
 }
 
 /*
@@ -35,7 +36,9 @@ class LWVistorView: UIView {
     func loginClick() {
         delegate?.vistorViewLoginClick()
     }
-    
+    func vistorViewRegisterClick() {
+        delegate?.vistorViewRegisterClick()
+    }
     // swift默认所有的view都能通过 xib 、storyboard 加载
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -220,6 +223,7 @@ class LWVistorView: UIView {
         btn.titleLabel?.font = UIFont.systemFontOfSize(14)
         //根据内容适应大小
         btn.sizeToFit()
+        btn.addTarget(self, action: "vistorViewRegisterClick", forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     
