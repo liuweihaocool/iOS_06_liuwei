@@ -21,7 +21,7 @@ class LWBaseTableVC: UITableViewController {
     private func setupVistorVidew() {
         
         // 使用自定义的访客视图
-        view  = vistorView
+        view = vistorView
         /// 设置按钮的代理
         vistorView.delegate = self
         
@@ -71,8 +71,6 @@ class LWBaseTableVC: UITableViewController {
 
 
 extension LWBaseTableVC:LWVistorViewDelegate {
-    
- 
     
     func vistorViewRegisterClick() {
         print("注册")

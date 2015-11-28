@@ -32,6 +32,8 @@ class LWOauthViewController: UIViewController {
     }
     
     
+    
+    
     /// js 填充账号 密码
     func autoFill(){
         let js = "document.getElementById('userId').value='liuweihaocool@126.com'; document.getElementById('passwd').value='qq4921349'"
@@ -46,6 +48,21 @@ class LWOauthViewController: UIViewController {
     private lazy var WebView = UIWebView()
     
     func loadAccessToken(code: String) {
+        // 发送网络请求
+        LWNetworkTools.sharedInstance.loadAccessToken(code) { (result, error) -> () in
+            // 如果有错误就提示错误，提示用户 关闭控制器
+            if error != nil || result == nil {
+                SVProgressHUD.showErrorWithStatus("你的网络不给力。。。", maskType: SVProgressHUDMaskType.Gradient)
+                // 在闭包调用方法一定要使用 self
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(Int64)(1 * NSEC_PER_SEC )), dispatch_get_main_queue(), { () -> Void in
+                    self.close()
+                })
+                return
+            }
+            // 没有出错
+            print(result)
+        }
+   
         
     }
 }
@@ -68,7 +85,7 @@ extension LWOauthViewController: UIWebViewDelegate {
         let urlString = request.URL!.absoluteString
         
         print(urlString)
-        // 判断是否以 http://www.baidu.com 开头 如果是就 往下走  不是就退出
+        // 判断是否以 http://www.baidu.com 开头 如果是就 往下走  不是就退出https://api.weibo.com/oauth2/access_token
         if !urlString.hasPrefix(LWNetworkTools.sharedInstance.redirect_uri) {
             
             return true
@@ -79,6 +96,10 @@ extension LWOauthViewController: UIWebViewDelegate {
                 /// 截取 code= 后面的字符串
                 let code = (query as NSString).substringFromIndex("code=".characters.count)
                 loadAccessToken(code)
+                print(code)
+                
+                self.close()
+                
                 
             }else {
                 self.close()
