@@ -15,10 +15,12 @@
 		016C12951C06FB1E00E76EC6 /* LWOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C12941C06FB1E00E76EC6 /* LWOauthViewController.swift */; };
 		019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A48DC1C01DE9300F1A721 /* AppDelegate.swift */; };
 		019A48E41C01DE9300F1A721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019A48E31C01DE9300F1A721 /* Assets.xcassets */; };
+		01A620091C0B440800AF6EB2 /* LWFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A620081C0B440800AF6EB2 /* LWFeatureController.swift */; };
 		01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */; };
 		01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */; };
 		01B654211C029DB400F76BB6 /* LWMessageTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B654201C029DB400F76BB6 /* LWMessageTabController.swift */; };
 		01B654231C029DD300F76BB6 /* LWProfileTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B654221C029DD300F76BB6 /* LWProfileTabController.swift */; };
+		01D4E5F91C0AF4B400C865DE /* LWWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4E5F81C0AF4B400C865DE /* LWWelcomeController.swift */; };
 		01E4A8F91C09D7CB002B9131 /* LWUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4A8F81C09D7CB002B9131 /* LWUserAccount.swift */; };
 		1647EA287D6B511911B71F2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A514A64B1255AE0358825D /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -34,10 +36,12 @@
 		019A48DC1C01DE9300F1A721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019A48E31C01DE9300F1A721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019A48E81C01DE9300F1A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01A620081C0B440800AF6EB2 /* LWFeatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWFeatureController.swift; sourceTree = "<group>"; };
 		01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTabController.swift; sourceTree = "<group>"; };
 		01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWDiscoverTabController.swift; sourceTree = "<group>"; };
 		01B654201C029DB400F76BB6 /* LWMessageTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMessageTabController.swift; sourceTree = "<group>"; };
 		01B654221C029DD300F76BB6 /* LWProfileTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWProfileTabController.swift; sourceTree = "<group>"; };
+		01D4E5F81C0AF4B400C865DE /* LWWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWWelcomeController.swift; sourceTree = "<group>"; };
 		01E4A8F81C09D7CB002B9131 /* LWUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWUserAccount.swift; sourceTree = "<group>"; };
 		2B4A7549CC32E77A37241CC0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		56A514A64B1255AE0358825D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,7 @@
 		019A48F31C01E2A900F1A721 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				01D4E5F71C0AF44D00C865DE /* NewFeature(新特性) */,
 				01E4A8F71C09D77D002B9131 /* Model(全局模型) */,
 				016C12901C06FA9D00E76EC6 /* Oauth */,
 				019A48FD1C01E2A900F1A721 /* Main(中间加号按钮) */,
@@ -301,6 +306,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		01D4E5F71C0AF44D00C865DE /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				01D4E5F81C0AF4B400C865DE /* LWWelcomeController.swift */,
+				01A620081C0B440800AF6EB2 /* LWFeatureController.swift */,
+			);
+			name = "NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
 		01E4A8F71C09D77D002B9131 /* Model(全局模型) */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +464,8 @@
 			files = (
 				01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */,
 				013C97951C02F5DF00BA738F /* LWTabbar.swift in Sources */,
+				01D4E5F91C0AF4B400C865DE /* LWWelcomeController.swift in Sources */,
+				01A620091C0B440800AF6EB2 /* LWFeatureController.swift in Sources */,
 				019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */,
 				016C128F1C06B7EF00E76EC6 /* LWNetworkTools.swift in Sources */,
 				016C12951C06FB1E00E76EC6 /* LWOauthViewController.swift in Sources */,

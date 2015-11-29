@@ -56,11 +56,17 @@ class LWOauthViewController: UIViewController {
                 // 在闭包调用方法一定要使用 self
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(Int64)(1 * NSEC_PER_SEC )), dispatch_get_main_queue(), { () -> Void in
                     self.close()
+                
                 })
                 return
             }
             // 没有出错
-            print(result)
+            
+            let userAccount = LWUserAccount(dict: result!)
+
+            userAccount.saveAccount()
+            
+            print(userAccount)
         }
    
         
@@ -99,8 +105,6 @@ extension LWOauthViewController: UIWebViewDelegate {
                 print(code)
                 
                 self.close()
-                
-                
             }else {
                 self.close()
             }

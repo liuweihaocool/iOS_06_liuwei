@@ -5,7 +5,8 @@
 //  Created by liuwei on 15/11/22.
 //  Copyright © 2015年 liuwei. All rights reserved.
 //
-
+//LWCollectionViewController(collectionViewLayout: UICollectionViewLayout() 流水布局
+//外部提供流水布局 但是不太好 流水布局需要设置参数 让调用的人来设置参数 封装的不是特别好
 import UIKit
 
 @UIApplicationMain//https://git.oschina.net/czbkiosweibo/GZWeibo666.git git 教师案例fd
@@ -23,12 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.backgroundColor = UIColor.whiteColor()
         /// 创建  tabBarVC 控制器
-        let tabBarVC = LWMainTarbarController()
+//        let tabBarVC = LWFeatureController()
         /// 设置  tarBarVC 为根控制器
-        window?.rootViewController = tabBarVC
-        
+        window?.rootViewController = LWFeatureController()
         window?.makeKeyAndVisible()//设置keywindow和显示
         return true
+        
     }
     
     func appsetup() {
