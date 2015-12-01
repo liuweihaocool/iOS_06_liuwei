@@ -23,7 +23,6 @@ class LWUserAccount: NSObject, NSCoding{
     /// 用于access_token地调用 接口获取授权后的access token
     var access_token: String?
     
-    
     /// accessToken的生命周期 单位是秒  在kvc字典转模型基本数据类型需要设置初始值
     var expires_in: NSTimeInterval = 0 {
         didSet {
@@ -34,12 +33,9 @@ class LWUserAccount: NSObject, NSCoding{
     /// 当前授权用户的UID
     var uid: String?
     
-
-   
     /// 保存过期时间
     var expirsDate: NSDate?
     /// 内存中的账号
-    
     
     init(dict: [String: AnyObject]) {
         super.init()
@@ -64,21 +60,11 @@ class LWUserAccount: NSObject, NSCoding{
     
     ///读取沙盒中的账号信息
     class func loadUserAccount() ->LWUserAccount? {
-//        if let account = NSKeyedUnarchiver.unarchiveObjectWithFile(plistPath) as? LWUserAccount {
-//            
-//            
-//            print("account.expiresDate:\(account.expirsDate)===NSDate:\(NSDate())")
-//            
-//            if account.expirsDate?.compare(NSDate()) == NSComparisonResult.OrderedDescending {
-//                print("没有过期")
-//                return account
-//            }
-//        }
+
         // 1 判断内存中的账户是可用的
         if userAcceount == nil {
             print("从内存中加载数据\(userAcceount)")
             // 内存中没有账户 到沙盒加载账户 赋值给内存中的账户
-        
             userAcceount = NSKeyedUnarchiver.unarchiveObjectWithFile(plistPath) as? LWUserAccount
         }else{
             print("从内存中加载数据")

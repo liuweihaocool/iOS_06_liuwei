@@ -52,6 +52,9 @@ class LWWelcomeController: UIViewController {
             self.view.layoutIfNeeded()
             }) { (_) -> Void in
                 print("完成 动画")
+                
+                ///切换界面
+                AppDelegate.switchRootViewController(true)
         }
         
             

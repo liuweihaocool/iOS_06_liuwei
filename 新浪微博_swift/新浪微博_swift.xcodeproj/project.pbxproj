@@ -127,7 +127,7 @@
 				01D4E5F71C0AF44D00C865DE /* NewFeature(新特性) */,
 				01E4A8F71C09D77D002B9131 /* Model(全局模型) */,
 				016C12901C06FA9D00E76EC6 /* Oauth */,
-				019A48FD1C01E2A900F1A721 /* Main(中间加号按钮) */,
+				019A48FD1C01E2A900F1A721 /* Main */,
 				019A48F51C01E2A900F1A721 /* Discover(发现) */,
 				019A48F91C01E2A900F1A721 /* Home(主页) */,
 				019A49011C01E2A900F1A721 /* Message(消息) */,
@@ -204,14 +204,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		019A48FD1C01E2A900F1A721 /* Main(中间加号按钮) */ = {
+		019A48FD1C01E2A900F1A721 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				019A48FE1C01E2A900F1A721 /* Controller */,
 				019A48FF1C01E2A900F1A721 /* Model */,
 				019A49001C01E2A900F1A721 /* View */,
 			);
-			name = "Main(中间加号按钮)";
 			path = Main;
 			sourceTree = "<group>";
 		};

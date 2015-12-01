@@ -67,6 +67,11 @@ class LWOauthViewController: UIViewController {
             userAccount.saveAccount()
             
             print(userAccount)
+            
+            
+            ///切换界面
+            AppDelegate.switchRootViewController(false)
+            self.close()
         }
    
         
