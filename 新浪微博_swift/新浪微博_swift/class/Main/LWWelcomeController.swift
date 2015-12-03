@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class LWWelcomeController: UIViewController {
     
@@ -18,6 +19,13 @@ class LWWelcomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
+        // 显示用户头像
+        if let avatar_large = LWUserAccount.loadUserAccount()?.avatar_large {
+            iconView.sd_setImageWithURL(NSURL(string: avatar_large), placeholderImage: UIImage(named: "avatar_default_big"))
+        }
+        
+        /// 获取用户数据
+        LWUserAccount.loadUserAccount()?.loadUserInfo()
     }
     
     //在用户看得到view的时候开始做动画
@@ -48,7 +56,7 @@ class LWWelcomeController: UIViewController {
         */
         iconViewBottomCon?.constant = -500
         
-        UIView.animateWithDuration(1.2, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+        UIView.animateWithDuration(0.2, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
             self.view.layoutIfNeeded()
             }) { (_) -> Void in
                 print("完成 动画")

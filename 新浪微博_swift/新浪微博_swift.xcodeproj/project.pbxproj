@@ -13,9 +13,13 @@
 		013C97991C0313B500BA738F /* LWVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C97981C0313B500BA738F /* LWVistorView.swift */; };
 		016C128F1C06B7EF00E76EC6 /* LWNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C128E1C06B7EF00E76EC6 /* LWNetworkTools.swift */; };
 		016C12951C06FB1E00E76EC6 /* LWOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C12941C06FB1E00E76EC6 /* LWOauthViewController.swift */; };
+		0175F1E41C1066EF0089F8CC /* LWStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175F1E31C1066EF0089F8CC /* LWStatus.swift */; };
+		0175F1E61C106F730089F8CC /* LWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175F1E51C106F730089F8CC /* LWUser.swift */; };
 		019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A48DC1C01DE9300F1A721 /* AppDelegate.swift */; };
 		019A48E41C01DE9300F1A721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019A48E31C01DE9300F1A721 /* Assets.xcassets */; };
+		01A476ED1C0DDB59003D977F /* LWHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A476EC1C0DDB59003D977F /* LWHomeTitleButton.swift */; };
 		01A620091C0B440800AF6EB2 /* LWFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A620081C0B440800AF6EB2 /* LWFeatureController.swift */; };
+		01ACF8B31C0DC0D500971E6D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACF8B21C0DC0D500971E6D /* Extension.swift */; };
 		01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */; };
 		01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */; };
 		01B654211C029DB400F76BB6 /* LWMessageTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B654201C029DB400F76BB6 /* LWMessageTabController.swift */; };
@@ -32,11 +36,15 @@
 		013C97981C0313B500BA738F /* LWVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWVistorView.swift; sourceTree = "<group>"; };
 		016C128E1C06B7EF00E76EC6 /* LWNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNetworkTools.swift; sourceTree = "<group>"; };
 		016C12941C06FB1E00E76EC6 /* LWOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWOauthViewController.swift; sourceTree = "<group>"; };
+		0175F1E31C1066EF0089F8CC /* LWStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWStatus.swift; sourceTree = "<group>"; };
+		0175F1E51C106F730089F8CC /* LWUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWUser.swift; sourceTree = "<group>"; };
 		019A48D91C01DE9300F1A721 /* 新浪微博_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博_swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		019A48DC1C01DE9300F1A721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019A48E31C01DE9300F1A721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019A48E81C01DE9300F1A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01A476EC1C0DDB59003D977F /* LWHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTitleButton.swift; sourceTree = "<group>"; };
 		01A620081C0B440800AF6EB2 /* LWFeatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWFeatureController.swift; sourceTree = "<group>"; };
+		01ACF8B21C0DC0D500971E6D /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		01B6541C1C029D6F00F76BB6 /* LWHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTabController.swift; sourceTree = "<group>"; };
 		01B6541E1C029D8E00F76BB6 /* LWDiscoverTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWDiscoverTabController.swift; sourceTree = "<group>"; };
 		01B654201C029DB400F76BB6 /* LWMessageTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMessageTabController.swift; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 		019A48F31C01E2A900F1A721 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				01ACF8B11C0DC0A600971E6D /* Extension(扩展) */,
 				01D4E5F71C0AF44D00C865DE /* NewFeature(新特性) */,
 				01E4A8F71C09D77D002B9131 /* Model(全局模型) */,
 				016C12901C06FA9D00E76EC6 /* Oauth */,
@@ -176,7 +185,7 @@
 			children = (
 				019A48FA1C01E2A900F1A721 /* Controller */,
 				019A48FB1C01E2A900F1A721 /* Model */,
-				019A48FC1C01E2A900F1A721 /* View */,
+				01A476EB1C0DDA84003D977F /* View */,
 			);
 			name = "Home(主页)";
 			path = Home;
@@ -195,13 +204,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		019A48FC1C01E2A900F1A721 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		019A48FD1C01E2A900F1A721 /* Main */ = {
@@ -305,6 +307,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		01A476EB1C0DDA84003D977F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01A476EC1C0DDB59003D977F /* LWHomeTitleButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01ACF8B11C0DC0A600971E6D /* Extension(扩展) */ = {
+			isa = PBXGroup;
+			children = (
+				01ACF8B21C0DC0D500971E6D /* Extension.swift */,
+			);
+			name = "Extension(扩展)";
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		01D4E5F71C0AF44D00C865DE /* NewFeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				01E4A8F81C09D7CB002B9131 /* LWUserAccount.swift */,
+				0175F1E31C1066EF0089F8CC /* LWStatus.swift */,
+				0175F1E51C106F730089F8CC /* LWUser.swift */,
 			);
 			name = "Model(全局模型)";
 			path = Model;
@@ -461,7 +482,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ACF8B31C0DC0D500971E6D /* Extension.swift in Sources */,
+				0175F1E41C1066EF0089F8CC /* LWStatus.swift in Sources */,
 				01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */,
+				0175F1E61C106F730089F8CC /* LWUser.swift in Sources */,
 				013C97951C02F5DF00BA738F /* LWTabbar.swift in Sources */,
 				01D4E5F91C0AF4B400C865DE /* LWWelcomeController.swift in Sources */,
 				01A620091C0B440800AF6EB2 /* LWFeatureController.swift in Sources */,
@@ -472,6 +496,7 @@
 				01B654231C029DD300F76BB6 /* LWProfileTabController.swift in Sources */,
 				01B654211C029DB400F76BB6 /* LWMessageTabController.swift in Sources */,
 				013C97971C03114700BA738F /* LWBaseTableVC.swift in Sources */,
+				01A476ED1C0DDB59003D977F /* LWHomeTitleButton.swift in Sources */,
 				01B6541D1C029D6F00F76BB6 /* LWHomeTabController.swift in Sources */,
 				013C97931C02B83B00BA738F /* LWMainTarbarController.swift in Sources */,
 				013C97991C0313B500BA738F /* LWVistorView.swift in Sources */,
