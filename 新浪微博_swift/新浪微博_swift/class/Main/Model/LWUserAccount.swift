@@ -70,7 +70,7 @@ class LWUserAccount: NSObject, NSCoding{
         }
         // 2 判断内存中是可用账户 有账户 判断时间是否过期
         if userAcceount != nil && userAcceount?.expirsDate?.compare(NSDate()) == NSComparisonResult.OrderedDescending {
-            print("过期时间\(userAcceount)")
+           // print("过期时间\(userAcceount)")
             // 有账户并且没有过期，是一个可用的账户
             return userAcceount
         }

@@ -10,10 +10,16 @@ import UIKit
 
 class LWMainTarbarController: UITabBarController {
 
+    /// 跳转控制器
     func composeClick() {
-        print("ffffff")
+        // 创建一个控制器
+        let LWCC = LWCompareController()
+        // 给创建的控制器包装一个 UINavigationController
+        let Nav = UINavigationController(rootViewController: LWCC);
+        
+        presentViewController(Nav, animated: true, completion: nil)
+        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

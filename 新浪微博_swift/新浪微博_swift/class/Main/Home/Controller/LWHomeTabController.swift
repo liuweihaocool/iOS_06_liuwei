@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AFNetworking
+import SVProgressHUD
 
 class LWHomeTabController: LWBaseTableVC {
     
@@ -18,11 +20,12 @@ class LWHomeTabController: LWBaseTableVC {
             return 
         }
         setNav()
-        LWNetworkTools.sharedInstance.loadStatus { (result, error) -> () in
-            print(result)
-            print("qqqqqqqqqqqqqqq\(result?.count)")
+        LWStatus.loadStatus { (statuses, error) -> () in
+            if error != nil {
+                SVProgressHUD.showErrorWithStatus("网络不给力")
+                return
+            }
         }
-        
     }
     /// 设置 首页导航按钮
     private  func setNav() {

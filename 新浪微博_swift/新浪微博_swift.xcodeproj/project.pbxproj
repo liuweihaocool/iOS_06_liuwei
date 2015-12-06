@@ -13,6 +13,8 @@
 		013C97991C0313B500BA738F /* LWVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C97981C0313B500BA738F /* LWVistorView.swift */; };
 		016C128F1C06B7EF00E76EC6 /* LWNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C128E1C06B7EF00E76EC6 /* LWNetworkTools.swift */; };
 		016C12951C06FB1E00E76EC6 /* LWOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C12941C06FB1E00E76EC6 /* LWOauthViewController.swift */; };
+		0170C0F21C127CDA00AD0771 /* LWCompareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0170C0F11C127CD900AD0771 /* LWCompareController.swift */; };
+		0170C0F41C12DE9800AD0771 /* LWPlaceholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0170C0F31C12DE9800AD0771 /* LWPlaceholdView.swift */; };
 		0175F1E41C1066EF0089F8CC /* LWStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175F1E31C1066EF0089F8CC /* LWStatus.swift */; };
 		0175F1E61C106F730089F8CC /* LWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175F1E51C106F730089F8CC /* LWUser.swift */; };
 		019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A48DC1C01DE9300F1A721 /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		013C97981C0313B500BA738F /* LWVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWVistorView.swift; sourceTree = "<group>"; };
 		016C128E1C06B7EF00E76EC6 /* LWNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNetworkTools.swift; sourceTree = "<group>"; };
 		016C12941C06FB1E00E76EC6 /* LWOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWOauthViewController.swift; sourceTree = "<group>"; };
+		0170C0F11C127CD900AD0771 /* LWCompareController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCompareController.swift; sourceTree = "<group>"; };
+		0170C0F31C12DE9800AD0771 /* LWPlaceholdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWPlaceholdView.swift; sourceTree = "<group>"; };
 		0175F1E31C1066EF0089F8CC /* LWStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWStatus.swift; sourceTree = "<group>"; };
 		0175F1E51C106F730089F8CC /* LWUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWUser.swift; sourceTree = "<group>"; };
 		019A48D91C01DE9300F1A721 /* 新浪微博_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博_swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,39 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		0170C0ED1C127C5C00AD0771 /* Compare */ = {
+			isa = PBXGroup;
+			children = (
+				0170C0EE1C127C5C00AD0771 /* Controller */,
+				0170C0EF1C127C5C00AD0771 /* Model */,
+				0170C0F01C127C5C00AD0771 /* View */,
+			);
+			path = Compare;
+			sourceTree = "<group>";
+		};
+		0170C0EE1C127C5C00AD0771 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0170C0F11C127CD900AD0771 /* LWCompareController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0170C0EF1C127C5C00AD0771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0170C0F01C127C5C00AD0771 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0170C0F31C12DE9800AD0771 /* LWPlaceholdView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		019A48D01C01DE9300F1A721 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +169,7 @@
 		019A48F31C01E2A900F1A721 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				0170C0ED1C127C5C00AD0771 /* Compare */,
 				01ACF8B11C0DC0A600971E6D /* Extension(扩展) */,
 				01D4E5F71C0AF44D00C865DE /* NewFeature(新特性) */,
 				01E4A8F71C09D77D002B9131 /* Model(全局模型) */,
@@ -482,11 +520,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0170C0F21C127CDA00AD0771 /* LWCompareController.swift in Sources */,
 				01ACF8B31C0DC0D500971E6D /* Extension.swift in Sources */,
 				0175F1E41C1066EF0089F8CC /* LWStatus.swift in Sources */,
 				01B6541F1C029D8E00F76BB6 /* LWDiscoverTabController.swift in Sources */,
 				0175F1E61C106F730089F8CC /* LWUser.swift in Sources */,
 				013C97951C02F5DF00BA738F /* LWTabbar.swift in Sources */,
+				0170C0F41C12DE9800AD0771 /* LWPlaceholdView.swift in Sources */,
 				01D4E5F91C0AF4B400C865DE /* LWWelcomeController.swift in Sources */,
 				01A620091C0B440800AF6EB2 /* LWFeatureController.swift in Sources */,
 				019A48DD1C01DE9300F1A721 /* AppDelegate.swift in Sources */,

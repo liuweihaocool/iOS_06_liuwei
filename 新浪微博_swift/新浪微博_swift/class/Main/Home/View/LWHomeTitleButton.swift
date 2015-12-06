@@ -33,6 +33,4 @@ class LWHomeTitleButton: UIButton {
         setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         sizeToFit()//自适应尺寸
     }
-
-   
 }

@@ -95,7 +95,7 @@ extension LWOauthViewController: UIWebViewDelegate {
         
         let urlString = request.URL!.absoluteString
         
-        print(urlString)
+      //  print(urlString)
         // 判断是否以 http://www.baidu.com 开头 如果是就 往下走  不是就退出https://api.weibo.com/oauth2/access_token
         if !urlString.hasPrefix(LWNetworkTools.sharedInstance.redirect_uri) {
             
@@ -107,7 +107,7 @@ extension LWOauthViewController: UIWebViewDelegate {
                 /// 截取 code= 后面的字符串
                 let code = (query as NSString).substringFromIndex("code=".characters.count)
                 loadAccessToken(code)
-                print(code)
+              //  print(code)
                 
                 self.close()
             }else {
